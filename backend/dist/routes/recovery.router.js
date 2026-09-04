@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const recovery_controller_1 = require("../controllers/recovery.controller");
+const router = (0, express_1.Router)();
+router.post('/analyze/:id', recovery_controller_1.analyzeTransaction);
+router.post('/execute/:id', recovery_controller_1.executeRecoveryAction);
+router.post('/simulate', recovery_controller_1.simulateBatch);
+router.post('/failure-demo', recovery_controller_1.failureDemo);
+exports.default = router;
